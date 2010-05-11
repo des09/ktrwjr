@@ -8,7 +8,7 @@ ktrwjr is a JUnit runner web application for GAE/j.<br />
 It helps to run your tests on the Production Server and the Development Server.
 
 =Demonstration=
-<font size="12pt">http://ktrwjr.appspot.com/</font>
+http://ktrwjr.appspot.com/
 
 http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20100511/20100511151146.jpg
 
