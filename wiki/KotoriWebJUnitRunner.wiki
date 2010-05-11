@@ -1,0 +1,19 @@
+#summary A junit runner for GAE/j production server.
+
+=What Is KotoriWebJUnitRunner(ktrwjr)?=
+KotoriWebJUnitRunner(ktrwjr) is a junit runner for GAE/j,
+which helps to run your tests on the Production Server and the Development Server.
+
+http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20100509/20100509012557.jpg
+
+
+
+=Demonstration=
+http://ktrwjr.appspot.com/
+
+=Features=
+ * Supports both Java6 and Java5
+ * Supports both jUnit4 and jUnit3
+ * Supports HOT Reloading of Slim3
+ * Created with GWT
+ * Designed with jQueryUI Theme
