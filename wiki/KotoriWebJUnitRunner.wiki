@@ -7,10 +7,19 @@ With ktrwjr, you can do it easily.
 ktrwjr is a JUnit runner web application for GAE/j.<br />
 It helps to run your tests on the Production Server and the Development Server.
 
-If you deploy ktrwjr with your GAE/J application,
-you can run test cases in your application on production server.
-
 =Demonstration=
 http://ktrwjr.appspot.com/
 
 http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20100511/20100511151146.jpg
+
+ * ktrwjr supports Java6 & Java5
+ * ktrwjr supports JUnit4 & JUnit3
+ * I confirmed ktrwjr works well with IE8/FF3/Chrome5 on WinXP.
+ * Sorry, I won't support IE6 & IE7.
+ * ktrwjr is created with GWT & jQueryUI Theme
+
+=How
+
+
+If you deploy ktrwjr with your GAE/J application,
+you can run test cases in your application on production server.
