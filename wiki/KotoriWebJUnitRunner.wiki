@@ -1,5 +1,8 @@
 #summary A junit runner for GAE/j Production Server.
 
+
+Now under construction
+
 =What Is Kotori Web JUnit Runner(ktrwjr)?=
 Haven't you ever wanted to execute your tests on the production server?<br />
 With ktrwjr, you can do it easily. 
@@ -12,14 +15,131 @@ http://ktrwjr.appspot.com/
 
 http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20100511/20100511151146.jpg
 
+=Features=
  * ktrwjr supports Java6 & Java5
  * ktrwjr supports JUnit4 & JUnit3
  * I confirmed ktrwjr works well with IE8/FF3/Chrome5 on WinXP.
  * Sorry, I won't support IE6 & IE7.
  * ktrwjr is created with GWT & jQueryUI Theme
 
-=How
+If you deploy ktrwjr with your GAE/j application,
+you can run your tests on the production server.
+(You can also run your tests on the development server.)
 
+=How It Works?=
+ktrwjr is a simple web application.
+ # When you open the ktrwjr page, ktrwjr searches the tests on the server and shows them.
+ # You check test cases that you want to run, then click "Run" button.
+ # They are run on the server and you receive results.
 
-If you deploy ktrwjr with your GAE/J application,
-you can run test cases in your application on production server.
+= How Do I Use It? =
+== Step1: download zip==
+Download the latest ktrwjr-x.x.x.zip(x.x.x. is the version) from [http://code.google.com/p/ktrwjr/downloads/list Downloads].
+
+== Step2: copy files to your war =
+Unzip and copy files in the war directory<br />
+to your application's war directory.
+
+== Step3: edit your web.xml =
+Add the following to your web.xml.
+{{{
+  <servlet>
+    <servlet-name>KtrWjrServiceServlet</servlet-name>
+    <servlet-class>bufferings.ktr.wjr.server.service.KtrWjrServiceServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>KtrWjrServiceServlet</servlet-name>
+    <url-pattern>/ktrwjr/ktrwjr/ktrwjr.s3gwt</url-pattern>
+  </servlet-mapping>
+}}}
+
+== Step4: security constraint ==
+It is better to lock down the ktrwjr urls<br />
+so that only admin users can access to
+
+Add the following to your web.xml.
+{{{
+  <security-constraint>
+    <web-resource-collection>
+      <url-pattern>/ktrwjr/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+}}}
+
+== Step5: add gwt-servlet.jar ==
+Add "gwt-servlet.jar" into your "war/WEB-INF/lib" if there's not.<br />
+The library is in GWT SDK.
+
+== Step6: add junit.jar ==
+Add "junit.jar" into your "war/WEB-INF/lib" if there's not.
+
+That's all.
+
+First, launch development server and access to "/ktrwjr/index.html".<br />
+After checking it goes well on dev-server, deploy to production server.<br />
+And enjoy ktr-wjr testing!
+
+= jQueryUI Theme =
+I used jQueryUI Theme for ktr-wjr design.<br />
+[http://jqueryui.com/themeroller/ jQueryUI Theme]
+
+The distribution zip includes the "base" theme,<br />
+but you can use what you like.
+
+ # donwload a jQueryUI Theme you like
+ # put the theme in "war/ktrwjr/css"
+ # change the css file reference in "war/ktrwjr/index.html" to the new one
+
+= Notice =
+== 30 seconds limitation ==
+ktr-wjr simply runs test cases,<br />
+so a test which takes more than 30 seconds will fail.
+
+If you want to run such tests, following project may be useful.<br />
+I don't know about that well, it seems to use Task Queue.
+
+[http://code.google.com/p/appengineunit/ appengineunit]
+
+== Test Case Search Directory ==
+ktr-wjr searches test cases in "WEB-INF/classes" directory.
+
+== Servlet Call ==
+ktr-wjr calls servlet twice on load.<br />
+After that, it calls once for running one test case.<br />
+Excluding that, it does not call servlet.
+
+== Independent of App Engine ==
+ktr-wjr can work on App Engine, but it's independent of App Engine's libraries.<br />
+ktr-wjr is GWT application.
+
+== Sources ==
+||ktr-wjr||http://kotori.googlecode.com/svn/trunk/ktr-wjr/||
+||ktr-wjr-demo||http://kotori.googlecode.com/svn/trunk/ktr-wjr-demo/||
+
+= Questions and Feedbacks ==
+If you have any questions,<br />
+please post them on http://groups.google.com/group/kotori-group
+
+If you find bugs<br />
+please post them on http://code.google.com/p/kotori/issues/list
+
+And I want to know how you feel about. Please let me know.
+
+= Release Notes =
+== 0.1.2-alpha(2009-11-26) ==
+ * Changed the icon and the label of the 'clear result button'.
+ * Fixed the bug that when the 'hide succeeded button' is on, the testcase which result is cleared does not appear.
+ * Fixed the bug that clearing results makes testcases total count zero.
+ * Fixed the bug that clearing results makes trace panel clear.
+
+== 0.1.1-alpha(2009-11-26) ==
+ * support junit3 jar
+ * add "clear" button that clears test results
+ * set result bar green without failures and errors
+
+== 0.1.0-alpha(2009-11-09) ==
+first alpha version release
