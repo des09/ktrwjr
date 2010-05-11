@@ -72,8 +72,17 @@ If you use Google Plugin for Eclipse, the GWT sdk is in the plugins folder.
 == Step6: add junit.jar ==
 Add "junit.jar" into your "war/WEB-INF/lib" if there's not.
 
-That's all.
+== Step7: check source folder output ==
+If the output folder of the test source folder is not WEB-INF/classes,<br />
+change it to WEB-INF/classes.
 
+In case of Eclipse
+ # Open property dialog of your project
+ # Select "Java Build Path" from left tree
+ # Select "Source" tab
+ # Uncheck "Allow output folders for source folders"
+
+== That's all. ==
 First, launch development server and access to "/ktrwjr/index.html".<br />
 After checking it goes well on dev-server, deploy to production server.<br />
 Enjoy ktrwjr testing!
