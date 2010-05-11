@@ -4,9 +4,13 @@
 Haven't you ever wanted to execute your tests on the production server?<br />
 With ktrwjr, you can do it easily. 
 
-Kotori Web JUnit Runner(ktrwjr) is a JUnit runner web application for GAE/j.<br />
+ktrwjr is a JUnit runner web application for GAE/j.<br />
 It helps to run your tests on the Production Server and the Development Server.
 
--> [http://code.google.com/p/ktrwjr/wiki/KotoriWebJUnitRunner for more details]
+If you deploy ktrwjr with your GAE/J application,
+you can run test cases in your application on production server.
+
+=Demonstration=
+http://ktrwjr.appspot.com/
 
 http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20100511/20100511151146.jpg
