@@ -17,7 +17,7 @@ http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20100511/20100511151146.j
  * Supports JUnit4 & JUnit3
  * I confirmed ktrwjr works well with IE8/FF3/Chrome5 on WinXP.
  * Sorry, I won't support IE6 & IE7.
- * Created with GWT & jQueryUI Theme.
+ * Using GWT & jQueryUI Theme.
 
 If you deploy ktrwjr with your GAE/j application, you can run your tests on the production server.<br />
 (You can also run your tests on the development server.)
