@@ -1,10 +1,10 @@
 #summary A junit runner for GAE/j Production Server.
 #labels Featured
 =What Is Kotori Web JUnit Runner(ktrwjr)?=
-ktrwjr is a JUnit runner web application for GAE/j.<br />
+ktrwjr is a JUnit runner web application for GAE/j.<br>
 It helps to run your tests on the Production Server and the Development Server.
 
-Haven't you ever wanted to execute your tests on the Production Server?<br />
+Haven't you ever wanted to execute your tests on the Production Server?<br>
 With ktrwjr, you can do it easily. 
 
 =Demonstration=
@@ -17,7 +17,7 @@ http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20100511/20100511151146.j
  * I confirmed ktrwjr works well with IE8/FF3/Chrome5 on WinXP (I won't support IE6 & IE7).
  * Using GWT & jQueryUI Theme.
 
-If you deploy ktrwjr with your GAE/j application, you can run your tests on the Production Server.<br />
+If you deploy ktrwjr with your GAE/j application, you can run your tests on the Production Server.<br>
 (You can also run your tests on the Development Server.)
 
 =How It Works?=
@@ -63,15 +63,15 @@ Add the following to your web.xml.
 }}}
 
 ==Step5: add gwt-servlet.jar==
-Add "gwt-servlet.jar" into your "war/WEB-INF/lib" if there's not.<br />
-The library is in GWT sdk.<br />
+Add "gwt-servlet.jar" into your "war/WEB-INF/lib" if there's not.<br>
+The library is in GWT sdk.<br>
 If you use Google Plugin for Eclipse, the GWT sdk is in the plugins folder.
 
 ==Step6: add junit.jar==
 Add "junit.jar" into your "war/WEB-INF/lib" if there's not.
 
 ==Step7: check source folder output==
-If the output folder of the test source folder is not war/WEB-INF/classes,<br />
+If the output folder of the test source folder is not war/WEB-INF/classes,<br>
 change it to war/WEB-INF/classes.
 
 In case of Eclipse
@@ -81,15 +81,15 @@ In case of Eclipse
  # Uncheck "Allow output folders for source folders"
 
 ==That's all.==
-First, launch the Development Server and access to "/ktrwjr/index.html".<br />
-After checking it goes well on dev-server, deploy to the Production Server.<br />
+First, launch the Development Server and access to "/ktrwjr/index.html".<br>
+After checking it goes well on dev-server, deploy to the Production Server.<br>
 Enjoy ktrwjr testing!
 
 =Notice=
 ==30 Seconds Limitation==
 ktrwjr simply runs test, so a test which takes more than 30 seconds will fail.
 
-If you want to run such tests, following project may be useful.<br />
+If you want to run such tests, following project may be useful.<br>
 I don't know about that well, it seems to use Task Queue.
 
 [http://code.google.com/p/appengineunit/ appengineunit]
@@ -98,14 +98,14 @@ I don't know about that well, it seems to use Task Queue.
 ktrwjr searches tests in "WEB-INF/classes" directory.
 
 ==Servlet Call==
-ktrwjr calls servlet once on load.<br />
-After that, it calls once for running one test.<br />
+ktrwjr calls servlet once on load.<br>
+After that, it calls once for running one test.<br>
 Excluding those, it does not call servlet.
 
 ==Development Server Log Hook==
-ktrwjr hooks logging messages during the test running.<br />
-The way of the log hook is different between the Production Server and the Development Server.<br />
-On the Production Server, ktrwjr can hook all logs during the test running.<br />
+ktrwjr hooks logging messages during the test running.<br>
+The way of the log hook is different between the Production Server and the Development Server.<br>
+On the Production Server, ktrwjr can hook all logs during the test running.<br>
 On the other hand, on the Development Server, ktrwjr can only hook the logs of the LoggingAPI.
 
 =Options=
@@ -124,10 +124,10 @@ The distribution zip includes the "base" theme, but you can use what you like.
  # Change the css file reference in "war/ktrwjr/index.html" to the new one.
 
 =Questions and Feedbacks==
-If you have any questions,<br />
+If you have any questions,<br>
 please post them on http://groups.google.com/group/kotori-group
 
-If you find bugs<br />
+If you find bugs<br>
 please post them on http://code.google.com/p/ktrwjr/issues/list
 
 And I want to know how you feel about. Please let me know.
