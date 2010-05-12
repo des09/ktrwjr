@@ -113,7 +113,7 @@ You can specify the log time zone to display on ktrwjr.
  # If you have already opened ktrwjr, reload ktrwjr.
 
 ==jQueryUI Theme==
-You can apply your favorite [http://jqueryui.com/themeroller/ jQueryUI Theme].
+You can apply your favorite [http://jqueryui.com/themeroller/ jQueryUI Theme].<br>
 The distribution zip includes the "base" theme, but you can use what you like.
  # Download a jQueryUI Theme you like.
  # Put the theme in "war/ktrwjr/css".
