@@ -111,7 +111,7 @@ On the Production Server, ktrwjr can hook all logs during the test running.<br /
 On the other hand, on the Development Server, ktrwjr can only hook the logs of the LoggingAPI.
 
 = Options =
-== Log TimeZone on ktrwjr ==
+== Log !TimeZone on ktrwjr ==
 You can specify the log time zone to display on ktrwjr.
  # Specify the GET parameter "tz" like "?tz=JST" at the end of the URL.
  # If you have already opened ktrwjr, reload ktrwjr.
