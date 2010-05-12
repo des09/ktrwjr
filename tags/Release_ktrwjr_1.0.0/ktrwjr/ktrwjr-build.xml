@@ -1,0 +1,159 @@
+<project name="ktrwjr" default="dist" basedir=".">
+
+  <property file="ktrwjr-build.properties" />
+
+  <property name="lib.dir" value="war\WEB-INF\lib" />
+  <property name="gwt.home"
+            value="C:\eclipse\eclipse\plugins\com.google.gwt.eclipse.sdkbundle.2.0.3_2.0.3.v201002191036\gwt-2.0.3" />
+  <property name="gae.home"
+            value="C:\eclipse\eclipse\plugins\com.google.appengine.eclipse.sdkbundle.1.3.3_1.3.3.v201004211154\appengine-java-sdk-1.3.3.1\lib" />
+
+  <property name="gwt-dev.lib" value="${gwt.home}\gwt-dev.jar" />
+  <property name="gwt-user.lib" value="${gwt.home}\gwt-user.jar" />
+  <property name="gae.lib"
+            value="${gae.home}\user\appengine-api-1.0-sdk-1.3.3.1.jar" />
+  <property name="slim3.lib" value="${lib.dir}\slim3-1.0.3.jar" />
+  <property name="junit.lib" value="${lib.dir}\junit-4.7.jar" />
+
+  <property name="target" value="target" />
+  <property name="app-ver" value="${ant.project.name}-${ktrwjr.version}" />
+
+  <tstamp>
+    <format property="TIMESTAMP" pattern="yyyyMMddHHmm" />
+  </tstamp>
+
+  <target name="prepare">
+    <property name="work" value="target/${TIMESTAMP}" />
+    <property name="work.classes" value="${work}/classes" />
+    <property name="work.lib" value="${work}/lib" />
+    <property name="work.gwtc" value="${work}/gwtc" />
+    <mkdir dir="${target}" />
+    <mkdir dir="${work.classes}" />
+    <mkdir dir="${work.lib}" />
+    <mkdir dir="${work.gwtc}" />
+    <mkdir dir="${work.gwtc}/ktrwjr" />
+  </target>
+
+  <target name="compile" depends="prepare">
+    <javac srcdir="src"
+           destdir="${work.classes}"
+           source="1.5"
+           encoding="UTF-8"
+           classpath="${junit.lib};${slim3.lib};${gwt-dev.lib};${gwt-user.lib};${gae.lib};"
+           memoryInitialSize="512m"
+           memoryMaximumSize="512m"
+           fork="true">
+      <include name="**/*.java" />
+      <compilerarg value="-Xlint:unchecked" />
+    </javac>
+  </target>
+
+  <target name="create-lib" depends="prepare, compile">
+    <jar jarfile="${work.lib}/${ant.project.name}.jar">
+      <fileset dir="${work.classes}" />
+      <fileset dir="src" includes="**/*" excludes="**/package-info.java" />
+      <manifest>
+        <section name="bufferings/ktr/wjr">
+          <attribute name="Extension-name" value="bufferings.ktr.wjr" />
+          <attribute name="Specification-Title"
+                     value="Kotori Web JUnit Runner" />
+          <attribute name="Specification-Version" value="${ktrwjr.version}" />
+          <attribute name="Specification-Vendor"
+                     value="bufferings[at]gmail.com" />
+          <attribute name="Implementation-Title" value="bufferings.ktr.wjr" />
+          <attribute name="Implementation-Version" value="${TIMESTAMP}" />
+          <attribute name="Implementation-Vendor"
+                     value="bufferings[at]gmail.com" />
+        </section>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="gwtc" depends="prepare">
+    <java failonerror="true"
+          fork="true"
+          classname="com.google.gwt.dev.Compiler"
+          classpath="${gwt-dev.lib};${gwt-user.lib};">
+      <classpath>
+        <pathelement location="src" />
+        <pathelement location="war/WEB-INF/classes" />
+      </classpath>
+      <jvmarg value="-Xmx256M" />
+      <arg line="-war ${work.gwtc}" />
+      <arg value="bufferings.ktr.wjr.KtrWjr" />
+    </java>
+  </target>
+
+  <target name="dist" depends="create-lib, gwtc">
+    <delete dir="${target}/${app-ver}" />
+    <copy todir="${target}/${app-ver}/war/WEB-INF/lib">
+      <fileset dir="${work.lib}" />
+    </copy>
+    <copy todir="${target}/${app-ver}/war/ktrwjr/ktrwjr">
+      <fileset dir="${work.gwtc}/ktrwjr" />
+    </copy>
+    <copy todir="${target}/${app-ver}/war/ktrwjr/js">
+      <fileset dir="war/js" />
+    </copy>
+    <copy todir="${target}/${app-ver}/war/ktrwjr/css">
+      <fileset dir="war/css" />
+    </copy>
+    <copy todir="${target}/${app-ver}/war/ktrwjr">
+      <fileset dir="war" includes="index.html,ktrwjr.css" />
+    </copy>
+    <zip zipfile="${target}/${app-ver}/${app-ver}.zip">
+      <zipfileset prefix="${app-ver}/war" dir="${target}/${app-ver}/war" />
+      <zipfileset prefix="${app-ver}/licenses" dir="licenses" />
+    </zip>
+    <delete dir="${work}" />
+  </target>
+
+  <target name="copy-to-projects">
+    <antcall target="copy-to-projects-inner">
+      <param name="copy.to.project" value="../ktrwjr-demo" />
+    </antcall>
+    <antcall target="copy-to-projects-inner">
+      <param name="copy.to.project" value="../ktrwjr-test" />
+    </antcall>
+    <antcall target="copy-to-projects-inner">
+      <param name="copy.to.project" value="../ktrwjr-test-java5" />
+    </antcall>
+    <antcall target="copy-to-projects-inner">
+      <param name="copy.to.project" value="../ktrwjr-test-junit3" />
+    </antcall>
+    <antcall target="copy-to-projects-inner">
+      <param name="copy.to.project" value="../ktrwjr-test-loadfail" />
+    </antcall>
+    <antcall target="copy-to-projects-inner">
+      <param name="copy.to.project" value="../ktrwjr-test-many" />
+    </antcall>
+    <antcall target="copy-to-projects-inner">
+      <param name="copy.to.project" value="../ktrwjr-test-slim3" />
+    </antcall>
+    <antcall target="copy-to-projects-inner">
+      <param name="copy.to.project" value="../slim3-blank" />
+    </antcall>
+    <antcall target="copy-to-projects-inner">
+      <param name="copy.to.project" value="../slim3demo" />
+    </antcall>
+    <antcall target="copy-to-projects-inner">
+      <param name="copy.to.project" value="../bufferings-lab" />
+    </antcall>
+  </target>
+
+  <target name="copy-to-projects-inner">
+    <delete>
+      <fileset dir="${copy.to.project}/war/ktrwjr/ktrwjr" />
+    </delete>
+    <copy todir="${copy.to.project}/war/ktrwjr/ktrwjr">
+      <fileset dir="${target}/${app-ver}/war/ktrwjr/ktrwjr" />
+    </copy>
+    <copy todir="${copy.to.project}/war/ktrwjr" overwrite="true">
+      <fileset dir="${target}/${app-ver}/war/ktrwjr" includes="index.html, ktrwjr.css" />
+    </copy>
+    <copy todir="${copy.to.project}/war/WEB-INF/lib" overwrite="true">
+      <fileset dir="${target}/${app-ver}/war/WEB-INF/lib"
+               includes="ktrwjr.jar" />
+    </copy>
+  </target>
+</project>
