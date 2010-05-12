@@ -22,13 +22,13 @@ http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20100511/20100511151146.j
 
 =どんな仕組みで動くの?=
 ktrwjrはシンプルなウェブアプリケーションです。
- # ktrwjrのページを開くと、ktrwjrはサーバー上のテストを探して表示します。
+ # ktrwjrのページを開くとktrwjrはサーバー上のテストを探して表示します。
  # 実行したいテストを選択して"Run"ボタンをクリックしてください。
  # テストがサーバー上で実行され結果を表示します。
 
 =使用方法=
 ==Step1: zipのダウンロード==
-[http://code.google.com/p/ktrwjr/downloads/list Downloads] から最新のktrwjr-x.x.x.zip(x.x.x はバージョン番号)をダウンロドしてください。
+[http://code.google.com/p/ktrwjr/downloads/list Downloads] から最新のktrwjr-x.x.x.zip(x.x.x はバージョン番号)をダウンロードしてください。
 
 ==Step2: 必要なファイルをwarディレクトリにコピー==
 解凍してできた「war」フォルダの中身をアプリケーションの「war」フォルダにコピーします。
@@ -70,6 +70,7 @@ Google Plugin for Eclipse を使用している場合はプラグインフォル
 "war/WEB-INF/lib"に"junit.jar"がない場合は追加してください。
 
 ==Step7: ソースフォルダの出力先の確認==
+ktrwjrは"WEB-INF/classes"ディレクトリ内のテストを検索します。<br>
 testソースフォルダの出力先が"war/WEB-INF/classes"ではない場合は"war/WEB-INF/classes"に変更します。
 
 Eclipseの場合
@@ -85,15 +86,12 @@ Enjoy ktrwjr testing!
 
 =注意事項など=
 ==30秒制限==
-ktrwjrは単純にテストを実行するだけなので30秒以上かかるテストは失敗します。
+ktrwjrは単純にテストを実行するだけなので30秒以上かかるテストはGAEの制限により失敗します。
 
 そのようなテストを実行したい場合は次のプロジェクトが使えるかもしれません。<br>
 よく知らないですけど。タスクキューを使うみたい。
 
 [http://code.google.com/p/appengineunit/ appengineunit]
-
-==テストを検索するディレクトリ==
-ktrwjrは"WEB-INF/classes"ディレクトリ内のテストを検索します。
 
 ==サーブレット呼び出し==
 ktrwjrはロード時に一度サーブレットを呼び出します。<br>
@@ -113,9 +111,7 @@ ktrwjr上で表示されるログのタイムゾーンを指定することが�
  # 既にktrwjrを開いている場合はktrwjrをリロードしてください。
 
 == jQueryUI Theme ==
-jQueryUIのThemeを使用しているので、好きなテーマに変えることができます。
-[http://jqueryui.com/themeroller/ jQueryUI Theme]
-
+[http://jqueryui.com/themeroller/ jQueryUI Theme] を使用しているので、好きなテーマに変えることができます。
 ktr-wjrには"base"テーマを同梱していますが。あなたの好きなテーマを使用することができます。
  # テーマを jQueryUI のサイトからダウンロード
  # ダウンロードしたテーマをあなたのアプリケーションの"war/ktrwjr/css"に配置
@@ -128,7 +124,7 @@ http://groups.google.com/group/kotori-group
 バグを発見された場合<br>
 http://code.google.com/p/ktrwjr/issues/list
 
-ツイッターやってるので気軽に声をかけてください
+ツイッターやってるので気軽に声をかけてください<br>
 http://twitter.com/bufferings
 
 = Release Notes =

@@ -71,6 +71,7 @@ If you use Google Plugin for Eclipse, the GWT sdk is in the plugins folder.
 Add "junit.jar" into your "war/WEB-INF/lib" if there's not.
 
 ==Step7: check source folder output==
+ktrwjr searches tests in "WEB-INF/classes" directory.<br>
 If the output folder of the test source folder is not war/WEB-INF/classes,<br>
 change it to war/WEB-INF/classes.
 
@@ -87,15 +88,12 @@ Enjoy ktrwjr testing!
 
 =Notice=
 ==30 Seconds Limitation==
-ktrwjr simply runs test, so a test which takes more than 30 seconds will fail.
+ktrwjr simply runs test, so a test which takes more than 30 seconds will fail because of GAE limitation.
 
 If you want to run such tests, following project may be useful.<br>
 I don't know about that well, it seems to use Task Queue.
 
 [http://code.google.com/p/appengineunit/ appengineunit]
-
-==Searching Directory of Tests==
-ktrwjr searches tests in "WEB-INF/classes" directory.
 
 ==Servlet Call==
 ktrwjr calls servlet once on load.<br>
@@ -115,9 +113,7 @@ You can specify the log time zone to display on ktrwjr.
  # If you have already opened ktrwjr, reload ktrwjr.
 
 ==jQueryUI Theme==
-You can apply your favorite jQueryUI theme.
-[http://jqueryui.com/themeroller/ jQueryUI Theme]
-
+You can apply your favorite [http://jqueryui.com/themeroller/ jQueryUI Theme].
 The distribution zip includes the "base" theme, but you can use what you like.
  # Download a jQueryUI Theme you like.
  # Put the theme in "war/ktrwjr/css".
