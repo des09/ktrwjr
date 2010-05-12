@@ -1,0 +1,137 @@
+#summary A junit runner for GAE/j Production Server.
+#labels Featured
+=Kotori Web JUnit Runner(ktrwjr)とは?=
+ktrwjrはGAE/jアプリケーション用のJUnitランナーです。<br />
+本番サーバーや開発サーバー上でテストを実行することができます。
+
+今までに本番サーバー上でテストを実行したいと思ったことはありませんか？<br />
+ktrwjrを使えば簡単に実行することができます。
+
+=デモ=
+http://ktrwjr.appspot.com/
+
+http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20100511/20100511151146.jpg
+
+ * Java6,Java5対応
+ * JUnit4,JUnit3対応
+ * ktrwjrはWinXPのIE8/FF3/Chrome5で動作確認をしています(IE6 & IE7は対応しません)。
+ * GWTとjQueryUI Themeを使用しています。
+
+あなたのアプリケーションと一緒にktrwjrをデプロイすれば、本番サーバー上であなたのテストを実行することができます。<br />
+(開発サーバー上でもテストを実行することができます。)
+
+=どんな仕組みで動くの?=
+ktrwjrはシンプルなウェブアプリケーションです。
+ # ktrwjrのページを開くと、ktrwjrはサーバー上のテストを探して表示します。
+ # 実行したいテストを選択して"Run"ボタンをクリックしてください。
+ # テストがサーバー上で実行され結果を表示します。
+
+=使用方法=
+==Step1: zipのダウンロード==
+[http://code.google.com/p/ktrwjr/downloads/list Downloads] から最新のktrwjr-x.x.x.zip(x.x.x はバージョン番号)をダウンロドしてください。
+
+==Step2: 必要なファイルをwarディレクトリにコピー==
+解凍してできた「war」フォルダの中身をアプリケーションの「war」フォルダにコピーします。
+
+==Step3: web.xmlの編集=
+web.xmlに次の記述を加えて下さい:
+{{{
+  <servlet>
+    <servlet-name>KtrWjrServiceServlet</servlet-name>
+    <servlet-class>bufferings.ktr.wjr.server.service.KtrWjrServiceServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>KtrWjrServiceServlet</servlet-name>
+    <url-pattern>/ktrwjr/ktrwjr/ktrwjr.s3gwt</url-pattern>
+  </servlet-mapping>
+}}}
+
+==Step4: セキュリティ設定==
+管理者権限を持ったユーザー以外からはアクセスできないようにした方が良いでしょう。<br />
+web.xmlに次の記述を加えて下さい:
+{{{
+  <security-constraint>
+    <web-resource-collection>
+      <url-pattern>/ktrwjr/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+}}}
+
+==Step5: gwt-servlet.jarの追加==
+"war/WEB-INF/lib"に"gwt-servlet.jar"がない場合は追加してください。<br />
+GWT SDKの中にあります。<br />
+Google Plugin for Eclipse を使用している場合はプラグインフォルダの中にSDKがあります。
+
+==Step6: junit.jarの追加==
+"war/WEB-INF/lib"に"junit.jar"がない場合は追加してください。
+
+==Step7: ソースフォルダの出力先の確認==
+testソースフォルダの出力先が"war/WEB-INF/classes"ではない場合は"war/WEB-INF/classes"に変更します。
+
+Eclipseの場合
+ # プロジェクトのプロパティダイアログを開きます。
+ # 左側のツリーから"Java Build Path"を選択
+ # "Source"タブを選択
+ # "Allow output folders for source folders"のチェックを外します。
+
+==以上です==
+開発サーバーを起動して"/ktrwjr/index.html"にアクセスしてください。<br />
+開発サーバーで動作確認ができたら本番サーバーにデプロイして実行してください。<br />
+Enjoy ktrwjr testing!
+
+=注意事項など=
+==30秒制限==
+ktrwjrは単純にテストを実行するだけなので30秒以上かかるテストは失敗します。
+
+そのようなテストを実行したい場合は次のプロジェクトが使えるかもしれません。<br />
+よく知らないですけど。タスクキューを使うみたい。
+
+[http://code.google.com/p/appengineunit/ appengineunit]
+
+==テストを検索するディレクトリ==
+ktrwjrは"WEB-INF/classes"ディレクトリ内のテストを検索します。
+
+==サーブレット呼び出し==
+ktrwjrはロード時に一度サーブレットを呼び出します。<br />
+その後は、テストを1つ実行するのに1度サーブレットを呼び出します。<br />
+それ以外のサーブレット呼び出しはありません。
+
+==開発サーバーでのログの取得==
+ktrwjrはテスト実行中のログメッセージを取得します。<br />
+本番サーバーと開発サーバーではログの取得の方法が異なります。<br />
+本番サーバーではテスト実行中の全てのログを取得することができます。<br />
+一方開発サーバーではktrwjrはLoggingAPIのログしか取得できません。
+
+= オプション =
+==ログのタイムゾーン指定==
+ktrwjr上で表示されるログのタイムゾーンを指定することができます。
+ # GETパラメーターで"?tz=JST"のように指定します。
+ # 既にktrwjrを開いている場合はktrwjrをリロードしてください。
+
+== jQueryUI Theme ==
+jQueryUIのThemeを使用しているので、好きなテーマに変えることができます。
+[http://jqueryui.com/themeroller/ jQueryUI Theme]
+
+ktr-wjrには"base"テーマを同梱していますが。あなたの好きなテーマを使用することができます。
+ # テーマを jQueryUI のサイトからダウンロード
+ # ダウンロードしたテーマをあなたのアプリケーションの"war/ktrwjr/css"に配置
+ # "war/ktrwjr/index.html"の参照しているCSSファイルをダウンロードしたテーマのCSSファイルに変更
+
+= Questions and Feedbacks ==
+質問、意見、要望、感想などあれば<br />
+http://groups.google.com/group/kotori-group
+
+バグを発見された場合<br />
+http://code.google.com/p/ktrwjr/issues/list
+
+ツイッターやってるので気軽に声をかけてください
+http://twitter.com/bufferings
+
+= Release Notes =
+== 1.0.0(2010-05-12) ==
+ * ktrwjr 1.0.0 was out!
+ * ktrwjr [http://sites.google.com/site/slim3appengine/ Slim3] にバンドルされました!
