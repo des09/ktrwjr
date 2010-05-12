@@ -136,5 +136,5 @@ And I want to know how you feel about. Please let me know.
 
 = Release Notes =
 == 1.0.0(2010-05-12) ==
- * Release 1.0.0!
- * bundled to [http://sites.google.com/site/slim3appengine/ Slim3]
+ * ktrwjr 1.0.0 was out!
+ * ktrwjr was bundled to [http://sites.google.com/site/slim3appengine/ Slim3]
