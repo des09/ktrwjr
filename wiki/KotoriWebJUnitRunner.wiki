@@ -1,7 +1,7 @@
 #summary A junit runner for GAE/j Production Server.
 #labels Featured
 =What Is Kotori Web JUnit Runner(ktrwjr)?=
-Haven't you ever wanted to execute your tests on the production server?<br />
+Haven't you ever wanted to execute your tests on the Production Server?<br />
 With ktrwjr, you can do it easily. 
 
 ktrwjr is a JUnit runner web application for GAE/j.<br />
@@ -19,8 +19,8 @@ http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20100511/20100511151146.j
  * Sorry, I won't support IE6 & IE7.
  * Using GWT & jQueryUI Theme.
 
-If you deploy ktrwjr with your GAE/j application, you can run your tests on the production server.<br />
-(You can also run your tests on the development server.)
+If you deploy ktrwjr with your GAE/j application, you can run your tests on the Production Server.<br />
+(You can also run your tests on the Development Server.)
 
 =How It Works?=
 ktrwjr is a simple web application.
@@ -83,12 +83,12 @@ In case of Eclipse
  # Uncheck "Allow output folders for source folders"
 
 == That's all. ==
-First, launch development server and access to "/ktrwjr/index.html".<br />
-After checking it goes well on dev-server, deploy to production server.<br />
+First, launch the Development Server and access to "/ktrwjr/index.html".<br />
+After checking it goes well on dev-server, deploy to the Production Server.<br />
 Enjoy ktrwjr testing!
 
 = Notice =
-== 30 seconds limitation ==
+== 30 Seconds Limitation ==
 ktrwjr simply runs test,　so a test which takes more than 30 seconds will fail.
 
 If you want to run such tests, following project may be useful.<br />
@@ -96,13 +96,34 @@ I don't know about that well, it seems to use Task Queue.
 
 [http://code.google.com/p/appengineunit/ appengineunit]
 
-== Tests Search Directory ==
+== Searching Directory of Tests ==
 ktrwjr searches tests in "WEB-INF/classes" directory.
 
 == Servlet Call ==
 ktrwjr calls servlet once on load.<br />
 After that, it calls once for running one test.<br />
 Excluding those, it does not call servlet.
+
+== Development Server Log Hook ==
+ktrwjr hooks logging messages.<br />
+The way of the log hook is different between the Production Server and the Development Server.<br />
+On the Production Server, ktrwjr can hook all logs during the test running.<br />
+On the other hand, on the Development Server, ktrwjr can only hook the logs of the LoggingAPI.
+
+= Options =
+== Log TimeZone on ktrwjr ==
+You can specify the log time zone to display on ktrwjr.
+ # Specify the GET parameter "tz" like "?tz=JST" at the end of the URL.
+ # If you have already opened ktrwjr, reload ktrwjr.
+
+== jQueryUI Theme ==
+You can apply your favorite jQueryUI theme.
+[http://jqueryui.com/themeroller/ jQueryUI Theme]
+
+The distribution zip includes the "base" theme, but you can use what you like.
+ # Download a jQueryUI Theme you like.
+ # Put the theme in "war/ktrwjr/css".
+ # Change the css file reference in "war/ktrwjr/index.html" to the new one.
 
 = Questions and Feedbacks ==
 If you have any questions,<br />
@@ -112,15 +133,6 @@ If you find bugs<br />
 please post them on http://code.google.com/p/ktrwjr/issues/list
 
 And I want to know how you feel about. Please let me know.
-
-= jQueryUI Theme =
-I used jQueryUI Theme for ktrwjr design.<br />
-[http://jqueryui.com/themeroller/ jQueryUI Theme]
-
-The distribution zip includes the "base" theme, but you can use what you like.
- # donwload a jQueryUI Theme you like
- # put the theme in "war/ktrwjr/css"
- # change the css file reference in "war/ktrwjr/index.html" to the new one
 
 = Release Notes =
 == 1.0.0(2010-05-12) ==
