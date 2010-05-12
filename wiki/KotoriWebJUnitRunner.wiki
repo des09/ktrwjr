@@ -13,7 +13,7 @@ http://ktrwjr.appspot.com/
 http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20100511/20100511151146.jpg
 
 =Features=
- * You can run your tests.
+ * You can run your tests on both the Production Server and the Development Server.
  * When the test fails, you can see the failure trace.
  * You can see the real time, the CPU time and the API CPU time that the test took.
  * You can see the logs which is outputed during the running of the test.
