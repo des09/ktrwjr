@@ -96,11 +96,6 @@ Enjoy ktrwjr testing!
 ==30 Seconds Limitation==
 ktrwjr simply runs test, so a test which takes more than 30 seconds will fail because of GAE limitation.
 
-If you want to run such tests, following project may be useful.<br>
-I don't know about that well, it seems to use Task Queue.
-
-[http://code.google.com/p/appengineunit/ appengineunit]
-
 ==Servlet Call==
 ktrwjr calls servlet once on load.<br>
 After that, it calls once for running one test.<br>
