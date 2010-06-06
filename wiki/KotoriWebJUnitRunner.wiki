@@ -1,6 +1,17 @@
 #summary A junit runner for GAE/j Production Server.
 #labels Featured
 =What Is Kotori Web JUnit Runner(ktrwjr)?=
+http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20100607/20100607065313.png
+
+<table border="0"><tr>
+<td style="vertical-align:middle;">
+I call "Kotori Web JUnit Runner" as "ktrwjr"[
+</td><td>
+http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20100607/20100607072716.jpg
+</td><td style="vertical-align:middle;">
+].
+</td></tr></table>
+
 ktrwjr is a JUnit runner web application for GAE/j.<br>
 It helps to run your tests on the Production Server and the Development Server.
 

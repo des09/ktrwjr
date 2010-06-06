@@ -1,6 +1,10 @@
 #summary A junit runner for GAE/j Production Server.
 #labels Featured
 =Kotori Web JUnit Runner(ktrwjr)とは?=
+http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20100607/20100607065313.png
+
+Kotori Web JUnit Runner のことを ktrwjr[ことーじゃ] と呼びます。
+
 ktrwjrはGAE/jアプリケーション用のJUnitランナーです。<br>
 本番サーバーや開発サーバー上でテストを実行することができます。
 
