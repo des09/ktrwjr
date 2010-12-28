@@ -16,11 +16,11 @@ ktrwjrは「ことーじゃ」と読むことになりました。
 =デモ=
 http://ktrwjr.appspot.com/
 
-http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20100511/20100511151146.jpg
+http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20101229/20101229023238.jpg
 
 =機能=
  * テストを本番サーバー上、開発サーバー上で実行することができます。
- * テストが失敗した場合にトレース情報を見ることができます。
+ * テストが失敗した場合にエラー情報を見ることができます。
  * テストにかかった実時間・CPU時間・API CPU時間を見ることができます。
  * テスト実行中に出力されたログを見ることができます。
 
@@ -100,10 +100,8 @@ Enjoy ktrwjr testing!
 ==30秒制限==
 ktrwjrは単純にテストを実行するだけなので30秒以上かかるテストはGAEの制限により失敗します。
 
-==サーブレット呼び出し==
-ktrwjrはロード時に一度サーブレットを呼び出します。<br>
-その後は、テストを1つ実行するのに1度サーブレットを呼び出します。<br>
-それ以外のサーブレット呼び出しはありません。
+==サーバーアクセス==
+ktrwjrはテストを1つ実行するのに1度サーバーアクセスを行います。
 
 ==開発サーバーでのログの取得==
 ktrwjrはテスト実行中のログメッセージを取得します。<br>
@@ -135,6 +133,19 @@ http://code.google.com/p/ktrwjr/issues/list
 http://twitter.com/bufferings
 
 = Release Notes =
-== 1.0.0(2010-05-12) ==
+==1.0.1(2010-12-29)==
+ * ツリーとリストでキーボード操作ができるようになりました。([http://code.google.com/p/ktrwjr/issues/detail?id=1 Issue1])
+ * ツリーとリストでキーボード操作した際に自動的にスクロールするようになりました。([http://code.google.com/p/ktrwjr/issues/detail?id=2 Issue2])
+ * リストに空行が表示されるようになりました。([http://code.google.com/p/ktrwjr/issues/detail?id=3 Issue3])
+ * ボタンとラベルに固定IDを持つようにしました。([http://code.google.com/p/ktrwjr/issues/detail?id=4 Issue4])
+ * Quotaを超過した場合にリトライを行う設定をすることができるようになりました。([http://code.google.com/p/ktrwjr/issues/detail?id=7 Issue7])
+ * テスト数と実行したテスト数を別々に表示するようにしました。([http://code.google.com/p/ktrwjr/issues/detail?id=8 Issue8])
+ * アイコンとローディング画像を作成しました。([http://code.google.com/p/ktrwjr/issues/detail?id=9 Issue9])
+ * ボタンにフォーカス移動ができるようにしました.([http://code.google.com/p/ktrwjr/issues/detail?id=14 Issue14])
+ * 設定ファイルをサポートしました。([http://code.google.com/p/ktrwjr/issues/detail?id=18 Issue18])
+ * GWT 2.1.1に対応しました。
+ * jQueryとjQueryUIのバージョンを1.4.4と1.8.7にして、"smoothness"テーマを使用するようにしました。
+
+==1.0.0(2010-05-12)==
  * ktrwjr 1.0.0 was out!
  * ktrwjr [http://sites.google.com/site/slim3appengine/ Slim3] にバンドルされました!
