@@ -1,5 +1,5 @@
 #sidebar TableOfContents
-=使用方法=
+=セットアップ方法=
 ==Step1: zipのダウンロード==
 [http://code.google.com/p/ktrwjr/downloads/list Downloads] から最新のktrwjr-x.x.x.zip(x.x.x はバージョン番号)をダウンロードしてください。
 

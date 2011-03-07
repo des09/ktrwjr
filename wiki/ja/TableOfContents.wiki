@@ -4,4 +4,4 @@
  * [Options オプション]
  * [Notices 注意事項]
  * [ReleaseNotes リリースノート]
- * [Contact Questions and Feedbacks]
+ * [Contact お問い合わせ]

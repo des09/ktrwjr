@@ -1,5 +1,5 @@
 #sidebar TableOfContents
-= Questions and Feedbacks ==
+= お問い合わせ ==
 質問、意見、要望、感想などあれば<br>
 http://groups.google.com/group/kotori-group
 
