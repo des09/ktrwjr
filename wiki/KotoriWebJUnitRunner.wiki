@@ -1,4 +1,4 @@
-#summary A junit runner for GAE/j Production Server.
+#sidebar TableOfContents
 #labels Featured
 =What Is Kotori Web JUnit Runner(ktrwjr)?=
 http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20100607/20100607065313.png
@@ -43,92 +43,6 @@ ktrwjr is a simple web application.
  # You check test cases that you want to run, then click "Run" button.
  # They are run on the server and you receive results.
 
-=How Do I Use It?=
-==Step1: download zip==
-Download the latest ktrwjr-x.x.x.zip(x.x.x is the version) from [http://code.google.com/p/ktrwjr/downloads/list Downloads].
-
-==Step2: copy files to your war=
-Unzip and copy files in the war directory to your application's war directory.
-
-==Step3: edit your web.xml=
-Add the following to your web.xml.
-{{{
-  <servlet>
-    <servlet-name>KtrWjrServiceServlet</servlet-name>
-    <servlet-class>bufferings.ktr.wjr.server.service.KtrWjrServiceServlet</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>KtrWjrServiceServlet</servlet-name>
-    <url-pattern>/ktrwjr/ktrwjr/ktrwjr.s3gwt</url-pattern>
-  </servlet-mapping>
-}}}
-
-==Step4: security constraint==
-It is better to lock down the ktrwjr urls so that only admin users can access to.
-
-Add the following to your web.xml.
-{{{
-  <security-constraint>
-    <web-resource-collection>
-      <url-pattern>/ktrwjr/*</url-pattern>
-    </web-resource-collection>
-    <auth-constraint>
-      <role-name>admin</role-name>
-    </auth-constraint>
-  </security-constraint>
-}}}
-
-==Step5: add gwt-servlet.jar==
-Add "gwt-servlet.jar" into your "war/WEB-INF/lib" if there's not.<br>
-The library is in GWT sdk.<br>
-If you use Google Plugin for Eclipse, the GWT sdk is in the plugins folder.
-
-==Step6: add junit.jar==
-Add "junit.jar" into your "war/WEB-INF/lib" if there's not.
-
-==Step7: check source folder output==
-ktrwjr searches tests in "WEB-INF/classes" directory.<br>
-If the output folder of the test source folder is not war/WEB-INF/classes,<br>
-change it to war/WEB-INF/classes.
-
-In case of Eclipse
- # Open property dialog of your project
- # Select "Java Build Path" from left tree
- # Select "Source" tab
- # Uncheck "Allow output folders for source folders"
-
-==That's all.==
-First, launch the Development Server and access to "/ktrwjr/index.html".<br>
-After checking it goes well on dev-server, deploy to the Production Server.<br>
-Enjoy ktrwjr testing!
-
-=Notice=
-==30 Seconds Limitation==
-ktrwjr simply runs test, so a test which takes more than 30 seconds will fail because of GAE limitation.
-
-==Server Access==
-ktrwjr accesses the server once every time a test is run. 
-
-==Development Server Log Hook==
-ktrwjr hooks logging messages during the test running.<br>
-The way of the log hook is different between the Production Server and the Development Server.<br>
-On the Production Server, ktrwjr can hook all logs during the test running.<br>
-On the other hand, on the Development Server, ktrwjr can only hook the logs of the LoggingAPI.
-
-=Options=
-==Log !TimeZone on ktrwjr==
-You can specify the log time zone to display on ktrwjr.
- # Specify the GET parameter "tz" like "?tz=JST" at the end of the URL.
- # If you have already opened ktrwjr, reload ktrwjr.
-
-==jQueryUI Theme==
-You can apply your favorite [http://jqueryui.com/themeroller/ jQueryUI Theme].<br>
-The distribution zip includes the "base" theme, but you can use what you like.
- # Download a jQueryUI Theme you like.
- # Put the theme in "war/ktrwjr/css".
- # Change the css file reference in "war/ktrwjr/index.html" to the new one.
-
 =Questions and Feedbacks==
 If you have any questions,<br>
 please post them on http://groups.google.com/group/kotori-group
@@ -138,20 +52,3 @@ please post them on http://code.google.com/p/ktrwjr/issues/list
 
 And I want to know how you feel about. Please let me know.
 
-=Release Notes=
-==1.0.1(2010-12-29)==
- * The tree view supported keyboard operation.([http://code.google.com/p/ktrwjr/issues/detail?id=1 Issue1])
- * The tree view and the list views supported auto-scrolling when the selected row is changed by the keyboard operation.([http://code.google.com/p/ktrwjr/issues/detail?id=2 Issue2])
- * The list views came to be able to show empty lines.([http://code.google.com/p/ktrwjr/issues/detail?id=3 Issue3])
- * The buttons and the labels came to have fixed id attributes for your selenium testing.([http://code.google.com/p/ktrwjr/issues/detail?id=4 Issue4])
- * Supported the setting for retrying the test when the application exceeds the quota.([http://code.google.com/p/ktrwjr/issues/detail?id=7 Issue7])
- * The result panel came to show total tests count and run tests count separately.([http://code.google.com/p/ktrwjr/issues/detail?id=8 Issue8])
- * Came to use new icon and new loading image.([http://code.google.com/p/ktrwjr/issues/detail?id=9 Issue9])
- * The buttons came to be focusable.([http://code.google.com/p/ktrwjr/issues/detail?id=14 Issue14])
- * You can use a configuration file.([http://code.google.com/p/ktrwjr/issues/detail?id=18 Issue18])
- * Supported GWT 2.1.1
- * Updated jQuery and jQueryUI versions to 1.4.4 and 1.8.7, and changed to use "smoothness" theme.
-
-==1.0.0(2010-05-12)==
- * ktrwjr 1.0.0 was out!
- * ktrwjr was bundled to [http://sites.google.com/site/slim3appengine/ Slim3]!

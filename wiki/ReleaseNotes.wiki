@@ -1,0 +1,22 @@
+#sidebar TableOfContents
+=Release Notes=
+==1.0.2(2011-03-07)==
+ * Supported GWT 2.2
+ * I decided to release the new version of ktrwjr before long without GWT-RPC.
+
+==1.0.1(2010-12-29)==
+ * The tree view supported keyboard operation.([http://code.google.com/p/ktrwjr/issues/detail?id=1 Issue1])
+ * The tree view and the list views supported auto-scrolling when the selected row is changed by the keyboard operation.([http://code.google.com/p/ktrwjr/issues/detail?id=2 Issue2])
+ * The list views came to be able to show empty lines.([http://code.google.com/p/ktrwjr/issues/detail?id=3 Issue3])
+ * The buttons and the labels came to have fixed id attributes for your selenium testing.([http://code.google.com/p/ktrwjr/issues/detail?id=4 Issue4])
+ * Supported the setting for retrying the test when the application exceeds the quota.([http://code.google.com/p/ktrwjr/issues/detail?id=7 Issue7])
+ * The result panel came to show total tests count and run tests count separately.([http://code.google.com/p/ktrwjr/issues/detail?id=8 Issue8])
+ * Came to use new icon and new loading image.([http://code.google.com/p/ktrwjr/issues/detail?id=9 Issue9])
+ * The buttons came to be focusable.([http://code.google.com/p/ktrwjr/issues/detail?id=14 Issue14])
+ * You can use a configuration file.([http://code.google.com/p/ktrwjr/issues/detail?id=18 Issue18])
+ * Supported GWT 2.1.1
+ * Updated jQuery and jQueryUI versions to 1.4.4 and 1.8.7, and changed to use "smoothness" theme.
+
+==1.0.0(2010-05-12)==
+ * ktrwjr 1.0.0 was out!
+ * ktrwjr was bundled to [http://sites.google.com/site/slim3appengine/ Slim3]!
