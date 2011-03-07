@@ -58,36 +58,3 @@ In case of Eclipse
 First, launch the Development Server and access to "/ktrwjr/index.html".<br>
 After checking it goes well on dev-server, deploy to the Production Server.<br>
 Enjoy ktrwjr testing!
-
-=Options=
-==Log !TimeZone on ktrwjr==
-You can specify the log time zone to display on ktrwjr.
- # Specify the GET parameter "tz" like "?tz=JST" at the end of the URL.
- # If you have already opened ktrwjr, reload ktrwjr.
-
-==jQueryUI Theme==
-You can apply your favorite [http://jqueryui.com/themeroller/ jQueryUI Theme].<br>
-The distribution zip includes the "base" theme, but you can use what you like.
- # Download a jQueryUI Theme you like.
- # Put the theme in "war/ktrwjr/css".
- # Change the css file reference in "war/ktrwjr/index.html" to the new one.
-
-=Notice=
-==30 Seconds Limitation==
-ktrwjr simply runs test, so a test which takes more than 30 seconds will fail because of GAE limitation.
-
-==Server Access==
-ktrwjr accesses the server once every time a test is run. 
-
-==Development Server Log Hook==
-ktrwjr hooks logging messages during the test running.<br>
-The way of the log hook is different between the Production Server and the Development Server.<br>
-On the Production Server, ktrwjr can hook all logs during the test running.<br>
-On the other hand, on the Development Server, ktrwjr can only hook the logs of the LoggingAPI.
-
-==GWTTestCase cannot be used==
-GWTTestCase is not supported by ktrwjr.
-
-If you have GWTTestCase tests in your application,
-please put them in another source folder and
-set its output dir except war/WEB-INF/classes.
