@@ -1,3 +1,4 @@
-* [KotoriWebJUnitRunner Kotori Web JUnit Runnerとは？]
-* [Usage 使用方法]
-* [ReleaesNotes リリースノート]
+*Kotori Web JUnit Runner*
+ * [KotoriWebJUnitRunner 紹介]
+ * [Usage 使用方法]
+ * [ReleaseNotes リリースノート]
