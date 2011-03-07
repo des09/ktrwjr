@@ -1,0 +1,90 @@
+#sidebar TableOfContents
+=使用方法=
+==Step1: zipのダウンロード==
+[http://code.google.com/p/ktrwjr/downloads/list Downloads] から最新のktrwjr-x.x.x.zip(x.x.x はバージョン番号)をダウンロードしてください。
+
+==Step2: 必要なファイルをwarディレクトリにコピー==
+解凍してできた「war」フォルダの中身をアプリケーションの「war」フォルダにコピーします。
+
+==Step3: web.xmlの編集=
+web.xmlに次の記述を加えて下さい:
+{{{
+  <servlet>
+    <servlet-name>KtrWjrServiceServlet</servlet-name>
+    <servlet-class>bufferings.ktr.wjr.server.service.KtrWjrServiceServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>KtrWjrServiceServlet</servlet-name>
+    <url-pattern>/ktrwjr/ktrwjr/ktrwjr.s3gwt</url-pattern>
+  </servlet-mapping>
+}}}
+
+==Step4: セキュリティ設定==
+管理者権限を持ったユーザー以外からはアクセスできないようにした方が良いでしょう。<br>
+web.xmlに次の記述を加えて下さい:
+{{{
+  <security-constraint>
+    <web-resource-collection>
+      <url-pattern>/ktrwjr/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+}}}
+
+==Step5: gwt-servlet.jarの追加==
+"war/WEB-INF/lib"に"gwt-servlet.jar"がない場合は追加してください。<br>
+GWT SDKの中にあります。<br>
+Google Plugin for Eclipse を使用している場合はプラグインフォルダの中にSDKがあります。
+
+==Step6: junit.jarの追加==
+"war/WEB-INF/lib"に"junit.jar"がない場合は追加してください。
+
+==Step7: ソースフォルダの出力先の確認==
+ktrwjrは"WEB-INF/classes"ディレクトリ内のテストを検索します。<br>
+testソースフォルダの出力先が"war/WEB-INF/classes"ではない場合は"war/WEB-INF/classes"に変更します。
+
+Eclipseの場合
+ # プロジェクトのプロパティダイアログを開きます。
+ # 左側のツリーから"Java Build Path"を選択
+ # "Source"タブを選択
+ # "Allow output folders for source folders"のチェックを外します。
+
+==以上です==
+開発サーバーを起動して"/ktrwjr/index.html"にアクセスしてください。<br>
+開発サーバーで動作確認ができたら本番サーバーにデプロイして実行してください。<br>
+Enjoy ktrwjr testing!
+
+=オプション=
+==ログのタイムゾーン指定==
+ktrwjr上で表示されるログのタイムゾーンを指定することができます。
+ # GETパラメーターで"?tz=JST"のように指定します。
+ # 既にktrwjrを開いている場合はktrwjrをリロードしてください。
+
+==jQueryUI Theme==
+[http://jqueryui.com/themeroller/ jQueryUI Theme] を使用しているので、好きなテーマに変えることができます。<br>
+ktrwjrには"base"テーマを同梱していますが。あなたの好きなテーマを使用することができます。
+ # テーマを jQueryUI のサイトからダウンロード
+ # ダウンロードしたテーマをあなたのアプリケーションの"war/ktrwjr/css"に配置
+ # "war/ktrwjr/index.html"の参照しているCSSファイルをダウンロードしたテーマのCSSファイルに変更
+ 
+=注意事項=
+==30秒制限==
+ktrwjrは単純にテストを実行するだけなので30秒以上かかるテストはGAEの制限により失敗します。
+
+==サーバーアクセス==
+ktrwjrはテストを1つ実行するのに1度サーバーアクセスを行います。
+
+==開発サーバーでのログの取得==
+ktrwjrはテスト実行中のログメッセージを取得します。<br>
+本番サーバーと開発サーバーではログの取得の方法が異なります。<br>
+本番サーバーではテスト実行中の全てのログを取得することができます。<br>
+一方開発サーバーではktrwjrはLoggingAPIのログしか取得できません。
+
+==GWTTestCaseは使用できません==
+ktrwjrはGWTTestCaseをサポートしていません。
+
+GWTTestCaseを使用している場合は別のソースフォルダにまとめて
+その出力フォルダをwar/WEB-INF/classes以外にしてください。

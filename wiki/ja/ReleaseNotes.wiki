@@ -1,0 +1,22 @@
+#sidebar TableOfContents
+=リリースノート=
+==1.0.2(2011-03-07)==
+ * GWT 2.2 に対応しました。
+ * GWTのバージョンアップで動かなくなるのでGWT-RPCを使用しないように修正したいと思っています。
+
+==1.0.1(2010-12-29)==
+ * ツリーとリストでキーボード操作ができるようになりました。([http://code.google.com/p/ktrwjr/issues/detail?id=1 Issue1])
+ * ツリーとリストでキーボード操作した際に自動的にスクロールするようになりました。([http://code.google.com/p/ktrwjr/issues/detail?id=2 Issue2])
+ * リストに空行が表示されるようになりました。([http://code.google.com/p/ktrwjr/issues/detail?id=3 Issue3])
+ * ボタンとラベルに固定IDを持つようにしました。([http://code.google.com/p/ktrwjr/issues/detail?id=4 Issue4])
+ * Quotaを超過した場合にリトライを行う設定をすることができるようになりました。([http://code.google.com/p/ktrwjr/issues/detail?id=7 Issue7])
+ * テスト数と実行したテスト数を別々に表示するようにしました。([http://code.google.com/p/ktrwjr/issues/detail?id=8 Issue8])
+ * アイコンとローディング画像を作成しました。([http://code.google.com/p/ktrwjr/issues/detail?id=9 Issue9])
+ * ボタンにフォーカス移動ができるようにしました.([http://code.google.com/p/ktrwjr/issues/detail?id=14 Issue14])
+ * 設定ファイルをサポートしました。([http://code.google.com/p/ktrwjr/issues/detail?id=18 Issue18])
+ * GWT 2.1.1に対応しました。
+ * jQueryとjQueryUIのバージョンを1.4.4と1.8.7にして、"smoothness"テーマを使用するようにしました。
+
+==1.0.0(2010-05-12)==
+ * ktrwjr 1.0.0 was out!
+ * ktrwjr [http://sites.google.com/site/slim3appengine/ Slim3] にバンドルされました!
