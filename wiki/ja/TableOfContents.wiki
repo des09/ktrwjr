@@ -1,4 +1,5 @@
 *Kotori Web JUnit Runner*
+http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20100607/20100607065313.png
  * [KotoriWebJUnitRunner 紹介]
  * [Usage 使用方法]
  * [ReleaseNotes リリースノート]
