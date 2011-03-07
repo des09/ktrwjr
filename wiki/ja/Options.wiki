@@ -1,0 +1,13 @@
+#sidebar TableOfContents
+=オプション=
+==ログのタイムゾーン指定==
+ktrwjr上で表示されるログのタイムゾーンを指定することができます。
+ # GETパラメーターで"?tz=JST"のように指定します。
+ # 既にktrwjrを開いている場合はktrwjrをリロードしてください。
+
+==jQueryUI Theme==
+[http://jqueryui.com/themeroller/ jQueryUI Theme] を使用しているので、好きなテーマに変えることができます。<br>
+ktrwjrには"base"テーマを同梱していますが。あなたの好きなテーマを使用することができます。
+ # テーマを jQueryUI のサイトからダウンロード
+ # ダウンロードしたテーマをあなたのアプリケーションの"war/ktrwjr/css"に配置
+ # "war/ktrwjr/index.html"の参照しているCSSファイルをダウンロードしたテーマのCSSファイルに変更

@@ -1,4 +1,7 @@
 *Kotori Web JUnit Runner*
  * [KotoriWebJUnitRunner 紹介]
- * [Usage 使用方法]
+ * [HowToSetup セットアップ方法]
+ * [Options オプション]
+ * [Notices 注意事項]
  * [ReleaseNotes リリースノート]
+ * [Contact Questions and Feedbacks]

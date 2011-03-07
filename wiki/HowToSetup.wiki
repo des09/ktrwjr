@@ -1,49 +1,5 @@
 #sidebar TableOfContents
-#labels Featured
-=What Is Kotori Web JUnit Runner(ktrwjr)?=
-http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20100607/20100607065313.png
-
-<table border="0"><tr>
-<td style="vertical-align:middle;">
-I call "Kotori Web JUnit Runner" as "ktrwjr"[
-</td><td>
-http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20100607/20100607072716.jpg
-</td><td style="vertical-align:middle;">
-].
-</td></tr></table>
-
-ktrwjr is a JUnit runner web application for GAE/j.<br>
-It helps to run your tests on the Production Server and the Development Server.
-
-Haven't you ever wanted to execute your tests on the Production Server?<br>
-With ktrwjr, you can do it easily. 
-
-=Demonstration=
-http://ktrwjr.appspot.com/
-
-http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20101229/20101229023238.jpg
-
-=Features=
- * You can run your tests on both the Production Server and the Development Server.
- * When the test fails, you can see the error information.
- * You can see the real time, the CPU time and the API CPU time that the test took.
- * You can see the logs which is outputed during the running of the test.
-
- * Supports Java6 & Java5
- * Supports JUnit4 & JUnit3
- * I confirmed ktrwjr works well with IE8/FF3/Chrome5 on WinXP (I won't support IE6 & IE7).
- * Using GWT & jQueryUI Theme.
-
-If you deploy ktrwjr with your GAE/j application, you can run your tests on the Production Server.<br>
-(You can also run your tests on the Development Server.)
-
-=How It Works?=
-ktrwjr is a simple web application.
- # When you open the ktrwjr page, ktrwjr searches tests on the server and shows them.
- # You check test cases that you want to run, then click "Run" button.
- # They are run on the server and you receive results.
-
-=How Do I Use It?=
+=How Do I Setup It?=
 ==Step1: download zip==
 Download the latest ktrwjr-x.x.x.zip(x.x.x is the version) from [http://code.google.com/p/ktrwjr/downloads/list Downloads].
 

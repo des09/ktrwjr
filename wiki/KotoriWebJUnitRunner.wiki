@@ -42,13 +42,3 @@ ktrwjr is a simple web application.
  # When you open the ktrwjr page, ktrwjr searches tests on the server and shows them.
  # You check test cases that you want to run, then click "Run" button.
  # They are run on the server and you receive results.
-
-=Questions and Feedbacks==
-If you have any questions,<br>
-please post them on http://groups.google.com/group/kotori-group
-
-If you find bugs<br>
-please post them on http://code.google.com/p/ktrwjr/issues/list
-
-And I want to know how you feel about. Please let me know.
-

@@ -1,0 +1,13 @@
+#sidebar TableOfContents
+=Options=
+==Log !TimeZone on ktrwjr==
+You can specify the log time zone to display on ktrwjr.
+ # Specify the GET parameter "tz" like "?tz=JST" at the end of the URL.
+ # If you have already opened ktrwjr, reload ktrwjr.
+
+==jQueryUI Theme==
+You can apply your favorite [http://jqueryui.com/themeroller/ jQueryUI Theme].<br>
+The distribution zip includes the "base" theme, but you can use what you like.
+ # Download a jQueryUI Theme you like.
+ # Put the theme in "war/ktrwjr/css".
+ # Change the css file reference in "war/ktrwjr/index.html" to the new one.

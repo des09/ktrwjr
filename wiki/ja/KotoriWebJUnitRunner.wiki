@@ -35,13 +35,3 @@ ktrwjrはシンプルなウェブアプリケーションです。
  # ktrwjrのページを開くとktrwjrはサーバー上のテストを探して表示します。
  # 実行したいテストを選択して"Run"ボタンをクリックしてください。
  # テストがサーバー上で実行され結果を表示します。
-
-= Questions and Feedbacks ==
-質問、意見、要望、感想などあれば<br>
-http://groups.google.com/group/kotori-group
-
-バグを発見された場合<br>
-http://code.google.com/p/ktrwjr/issues/list
-
-ツイッターやってるので気軽に声をかけてください<br>
-http://twitter.com/bufferings

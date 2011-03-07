@@ -1,4 +1,7 @@
 *Kotori Web JUnit Runner*
  * [KotoriWebJUnitRunner Introduction]
- * [Usage How to use?]
- * [ReleaesNotes Release Notes]
+ * [HowToSetup How Do I Setup It?]
+ * [Options Options]
+ * [Notices Notices]
+ * [ReleaseNotes Release Notes]
+ * [Contact Questions and Feedbacks]
