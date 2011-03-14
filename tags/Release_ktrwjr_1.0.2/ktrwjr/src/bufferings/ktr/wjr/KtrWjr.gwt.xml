@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module
+  rename-to='ktrwjr'>
+  <!-- gwt core -->
+  <inherits name='com.google.gwt.user.User' />
+
+  <!-- entry point -->
+  <entry-point class='bufferings.ktr.wjr.client.KtrWjr' />
+
+  <!-- source -->
+  <source path="client" />
+  <source path="shared" />
+</module>
