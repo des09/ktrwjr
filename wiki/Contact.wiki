@@ -1,7 +1,7 @@
 #sidebar TableOfContents
 =Questions and Feedbacks==
 If you have any questions,<br>
-please post them on http://groups.google.com/group/kotori-group
+http://twitter.com/bufferings
 
 If you find bugs<br>
 please post them on http://code.google.com/p/ktrwjr/issues/list

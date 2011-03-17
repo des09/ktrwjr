@@ -1,5 +1,10 @@
 #sidebar TableOfContents
 =Release Notes=
+==2.0.0(2011-03-18)==
+ * Now we are free from GWT-RPC.
+ * We don't need gwt-servlet.jar any more!
+ * I can sleep well even if GWT's version is updated.
+
 ==1.0.2(2011-03-07)==
  * Supported GWT 2.2
  * I decided to release the new version of ktrwjr before long without GWT-RPC.

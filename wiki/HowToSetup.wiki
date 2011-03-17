@@ -35,15 +35,10 @@ Add the following to your web.xml.
   </security-constraint>
 }}}
 
-==Step5: add gwt-servlet.jar==
-Add "gwt-servlet.jar" into your "war/WEB-INF/lib" if there's not.<br>
-The library is in GWT sdk.<br>
-If you use Google Plugin for Eclipse, the GWT sdk is in the plugins folder.
-
-==Step6: add junit.jar==
+==Step5: add junit.jar==
 Add "junit.jar" into your "war/WEB-INF/lib" if there's not.
 
-==Step7: check source folder output==
+==Step6: check source folder output==
 ktrwjr searches tests in "WEB-INF/classes" directory.<br>
 If the output folder of the test source folder is not war/WEB-INF/classes,<br>
 change it to war/WEB-INF/classes.

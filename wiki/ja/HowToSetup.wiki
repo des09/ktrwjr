@@ -34,15 +34,10 @@ web.xmlに次の記述を加えて下さい:
   </security-constraint>
 }}}
 
-==Step5: gwt-servlet.jarの追加==
-"war/WEB-INF/lib"に"gwt-servlet.jar"がない場合は追加してください。<br>
-GWT SDKの中にあります。<br>
-Google Plugin for Eclipse を使用している場合はプラグインフォルダの中にSDKがあります。
-
-==Step6: junit.jarの追加==
+==Step5: junit.jarの追加==
 "war/WEB-INF/lib"に"junit.jar"がない場合は追加してください。
 
-==Step7: ソースフォルダの出力先の確認==
+==Step6: ソースフォルダの出力先の確認==
 ktrwjrは"WEB-INF/classes"ディレクトリ内のテストを検索します。<br>
 testソースフォルダの出力先が"war/WEB-INF/classes"ではない場合は"war/WEB-INF/classes"に変更します。
 

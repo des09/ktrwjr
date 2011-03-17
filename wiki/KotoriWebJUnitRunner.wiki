@@ -29,9 +29,8 @@ http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20101229/20101229023238.j
  * You can see the real time, the CPU time and the API CPU time that the test took.
  * You can see the logs which is outputed during the running of the test.
 
- * Supports Java6 & Java5
  * Supports JUnit4 & JUnit3
- * I confirmed ktrwjr works well with IE8/FF3/Chrome5 on WinXP (I won't support IE6 & IE7).
+ * I confirmed ktrwjr works well with IE8/FF3/Chrome10 on WinXP (I won't support IE6 & IE7).
  * Using GWT & jQueryUI Theme.
 
 If you deploy ktrwjr with your GAE/j application, you can run your tests on the Production Server.<br>

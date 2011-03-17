@@ -22,9 +22,8 @@ http://img.f.hatena.ne.jp/images/fotolife/b/bufferings/20101229/20101229023238.j
  * テストにかかった実時間・CPU時間・API CPU時間を見ることができます。
  * テスト実行中に出力されたログを見ることができます。
 
- * Java6,Java5対応
  * JUnit4,JUnit3対応
- * ktrwjrはWinXPのIE8/FF3/Chrome5で動作確認をしています(IE6 & IE7は対応しません)。
+ * ktrwjrはWinXPのIE8/FF3/Chrome10で動作確認をしています(IE6 & IE7は対応しません)。
  * GWTとjQueryUI Themeを使用しています。
 
 あなたのアプリケーションと一緒にktrwjrをデプロイすれば、本番サーバー上であなたのテストを実行することができます。<br>
