@@ -1,5 +1,9 @@
 #sidebar TableOfContents
 =Release Notes=
+==2.0.1(2011-03-20)==
+ * Fixed the issue. "Japanese chars cannot be used in ktrwjr 2.0.0":<br>
+http://code.google.com/p/ktrwjr/issues/detail?id=22
+
 ==2.0.0(2011-03-18)==
  * Now we are free from GWT-RPC.
  * We don't need gwt-servlet.jar any more!
