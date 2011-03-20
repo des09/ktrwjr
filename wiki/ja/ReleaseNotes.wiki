@@ -1,11 +1,10 @@
 #sidebar TableOfContents
 =リリースノート=
 ==2.0.1(2011-03-20)==
- * ktrwjr 2.0.0で日本語メソッド名が使用できなくなった問題を修正しました。<br>
-http://code.google.com/p/ktrwjr/issues/detail?id=22
+ * ktrwjr 2.0.0で日本語メソッド名が使用できなくなった問題を修正しました。([http://code.google.com/p/ktrwjr/issues/detail?id=22 Issue22])
 
 ==2.0.0(2011-03-18)==
- * GWT-RPCに依存しないようになりました。
+ * GWT-RPCに依存しないようになりました。([http://code.google.com/p/ktrwjr/issues/detail?id=16 Issue16])
  * もうgwt-servlet.jarは不要です。
  * GWT-RPCの互換性に悩まされることもありません。
 
